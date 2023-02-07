@@ -41,6 +41,20 @@ for school in schools:
             print(school["Graduation rate  women (DRVGR2020)"])
             print()
             print()
+        if (
+            school[
+                "Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"
+            ]
+            >= 50000
+        ):
+            print(school["instnm"] + ":")
+            print(
+                school[
+                    "Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"
+                ]
+            )
+            print()
+            print()
 
 
 # Display price for living off-campus
