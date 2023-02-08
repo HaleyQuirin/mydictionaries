@@ -41,6 +41,7 @@ for school in schools:
             print(school["Graduation rate  women (DRVGR2020)"])
             print()
             print()
+    if school["NCAA"]["NAIA conference number football (IC2020)"] in conference_schools:
         if (
             school[
                 "Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"

@@ -39,29 +39,30 @@ infile = open("eq_data.json", "r")
 earthquakes = json.load(infile)
 
 print(len(earthquakes["features"]))
-
 # part 1 end
+
+Location = {"place"}
+Magnitude = {"mag"}
+Longitude = {"coordinates"}
+Latitude = {"coordinates"}
+
+
 # part 2 start
-eq_dict = dict()
-eq_dict[Location] = earthquakes["place"]
-eq_dict[Magnitude] = earthquakes["mag"]
-eq_dict[Longitude] = earthquakes["coordinates"]
-eq_dict[Latitude] = earthquakes["coordinates"]
+for eq in earthquakes["features"]:
 
+    if eq["properties"]["mag"] > 6:
+        eq_dict = {}
+        # eq_dict[Location] = eq["properties", "mag", "place"]
+        # eq_dict[Magnitude] = eq["mag"]
+        # eq_dict[Longitude] = eq["coordinates"]
+        # eq_dict[Latitude] = eq["coordinates"]
 
-# print(eq_dict)
-
-for earthquakes in earthquakes:
-
-    if (earthquakes["feature"]["mag"]) > 6:
-        print("Location: ", earthquakes["place"])
-        print("Magnitude: ", earthquakes["mag"])
-        print("Longitude: ", earthquakes["coordinates"])
-        print("Latitude: ", earthquakes["coordinates"])
-        print(eq_dict)
-
-# info_to_extract = ["place", "mag", "coordinates"]
-# info = dict(filter(lambda item: item[0] in info_to_extract, earthquakes.items()))
-# print("Extracted Info: " + str(info))
+        print("Location: ", eq["properties"]["place"])
+        print("Magnitude: ", eq["properties"]["mag"])
+        print("Longitude: ", eq["geometry"]["coordinates"][0])
+        print("Latitude: ", eq["geometry"]["coordinates"][1])
+        print()
+        print()
+        # print(eq_dict)
 
 # part 2/3 end
