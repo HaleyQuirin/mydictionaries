@@ -43,6 +43,12 @@ print(len(earthquakes["features"]))
 # part 1 end
 # part 2 start
 eq_dict = dict()
+eq_dict[Location] = earthquakes["place"]
+eq_dict[Magnitude] = earthquakes["mag"]
+eq_dict[Longitude] = earthquakes["coordinates"]
+eq_dict[Latitude] = earthquakes["coordinates"]
+
+
 # print(eq_dict)
 
 for earthquakes in earthquakes:
@@ -57,3 +63,5 @@ for earthquakes in earthquakes:
 # info_to_extract = ["place", "mag", "coordinates"]
 # info = dict(filter(lambda item: item[0] in info_to_extract, earthquakes.items()))
 # print("Extracted Info: " + str(info))
+
+# part 2/3 end
