@@ -42,10 +42,18 @@ print(len(earthquakes["features"]))
 
 # part 1 end
 # part 2 start
-# for earthquakes in earthquakes:
+eq_dict = dict()
+# print(eq_dict)
 
-# if (earthquakes["feature"]["mag"]) > 6:
-# print("Location: ", earthquakes["place"])
-# print("Magnitude: ", earthquakes["mag"])
-# print("Longitude: ", earthquakes["coordinates"], index(0))
-# print("Latitude: ", earthquakes["coordinates"], index(1))
+for earthquakes in earthquakes:
+
+    if (earthquakes["feature"]["mag"]) > 6:
+        print("Location: ", earthquakes["place"])
+        print("Magnitude: ", earthquakes["mag"])
+        print("Longitude: ", earthquakes["coordinates"])
+        print("Latitude: ", earthquakes["coordinates"])
+        print(eq_dict)
+
+# info_to_extract = ["place", "mag", "coordinates"]
+# info = dict(filter(lambda item: item[0] in info_to_extract, earthquakes.items()))
+# print("Extracted Info: " + str(info))

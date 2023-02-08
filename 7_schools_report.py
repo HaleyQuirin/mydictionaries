@@ -45,7 +45,7 @@ for school in schools:
             school[
                 "Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"
             ]
-            >= 50000
+            > 50000
         ):
             print(school["instnm"] + ":")
             print(
