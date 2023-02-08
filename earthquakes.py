@@ -1,4 +1,4 @@
-'''
+"""
 the eq_data file is a json file that contains detailed information about
 earthquakes around the world for a period of a month.
 
@@ -30,8 +30,22 @@ Magnitude: 6.6
 Longitude: -92.2981
 Latitude: 14.7628
 
-'''
-
-
-
+"""
+# part 1 start
 import json
+
+infile = open("eq_data.json", "r")
+
+earthquakes = json.load(infile)
+
+print(len(earthquakes["features"]))
+
+# part 1 end
+# part 2 start
+# for earthquakes in earthquakes:
+
+# if (earthquakes["feature"]["mag"]) > 6:
+# print("Location: ", earthquakes["place"])
+# print("Magnitude: ", earthquakes["mag"])
+# print("Longitude: ", earthquakes["coordinates"], index(0))
+# print("Latitude: ", earthquakes["coordinates"], index(1))

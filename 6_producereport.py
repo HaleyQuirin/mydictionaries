@@ -49,15 +49,15 @@ ProduceDictionary = {
 
 # print(type(i)) will test to see what type the i is
 
-for i in ProduceDictionary:
-    cost = ProduceDictionary[i]["cost"]
-    amt_sold = ProduceDictionary[i]["amt_sold"]
-    stated_total = ProduceDictionary[i]["total"]
+for produce in ProduceDictionary:
+    cost = ProduceDictionary[produce]["cost"]
+    amt_sold = ProduceDictionary[produce]["amt_sold"]
+    stated_total = ProduceDictionary[produce]["total"]
 
     calculated_total = round(cost * amt_sold, 2)
 
     if calculated_total != stated_total:
-        print(f"Produce Name: {i}")
+        print(f"Produce Name: {produce}")
         print(f"Calculated Total: ${calculated_total:.2f}")
         print(f"Calculated Total: ${stated_total:.2f}")
         print("           ")
