@@ -41,10 +41,10 @@ earthquakes = json.load(infile)
 print(len(earthquakes["features"]))
 # part 1 end
 
-Location = {"place"}
-Magnitude = {"mag"}
-Longitude = {"coordinates"}
-Latitude = {"coordinates"}
+# Location = {"place"}
+# Magnitude = {"mag"}
+# Longitude = {"coordinates"}
+# Latitude = {"coordinates"}
 
 
 # part 2 start
@@ -52,7 +52,7 @@ for eq in earthquakes["features"]:
 
     if eq["properties"]["mag"] > 6:
         eq_dict = {}
-        # eq_dict[Location] = eq["properties", "mag", "place"]
+        # eq_dict[Location] = eq("properties", "mag", "place")
         # eq_dict[Magnitude] = eq["mag"]
         # eq_dict[Longitude] = eq["coordinates"]
         # eq_dict[Latitude] = eq["coordinates"]
