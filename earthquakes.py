@@ -36,33 +36,49 @@ import json
 
 infile = open("eq_data.json", "r")
 
-earthquakes = json.load(infile)
+earthquake_info = json.load(infile)
 
-print(len(earthquakes["features"]))
+print(len(earthquake_info["features"]))
 # part 1 end
 
-# Location = {"place"}
-# Magnitude = {"mag"}
-# Longitude = {"coordinates"}
-# Latitude = {"coordinates"}
+# (not needed) Location = {"place"}
+# (not needed) Magnitude = {"mag"}
+# (not needed) Longitude = {"coordinates"[0]}
+# (not needed) Latitude = {"coordinates"[1]}
+eq_dict = {}
 
-
-# part 2 start
-for eq in earthquakes["features"]:
+# part 2/3 start
+for eq in earthquake_info["features"]:
 
     if eq["properties"]["mag"] > 6:
-        eq_dict = {}
-        # eq_dict[Location] = eq("properties", "mag", "place")
-        # eq_dict[Magnitude] = eq["mag"]
-        # eq_dict[Longitude] = eq["coordinates"]
-        # eq_dict[Latitude] = eq["coordinates"]
+        Location = eq["properties"]["place"]
+        Magnitude = eq["properties"]["mag"]
+        Longitude = eq["geometry"]["coordinates"][0]
+        Latitude = eq["geometry"]["coordinates"][1]
+        eq_dict[eq["properties"]["title"]] = {
+            "Location": Location,
+            "Magnitude": Magnitude,
+            "Longitude": Longitude,
+            "Latitude": Latitude,
+        }
 
-        print("Location: ", eq["properties"]["place"])
-        print("Magnitude: ", eq["properties"]["mag"])
-        print("Longitude: ", eq["geometry"]["coordinates"][0])
-        print("Latitude: ", eq["geometry"]["coordinates"][1])
-        print()
-        print()
-        # print(eq_dict)
+earthquakes = 0
 
+for eq in earthquake_info["features"]:
+    earthquakes = earthquakes + 1
+
+    # print("Location: ", eq["properties"]["place"])
+    # print("Magnitude: ", eq["properties"]["mag"])
+    # print("Longitude: ", eq["geometry"]["coordinates"][0])
+    # print("Latitude: ", eq["geometry"]["coordinates"][1])
+    # print()
+    # print()
+
+for eq in eq_dict:
+    print("Location: ", str(eq_dict[eq]["Location"]))
+    print("Magnitude: ", str(eq_dict[eq]["Magnitude"]))
+    print("Longitude: ", str(eq_dict[eq]["Longitude"]))
+    print("Latitude: ", str(eq_dict[eq]["Latitude"]))
+    print("_____________________________")
+    print("                             ")
 # part 2/3 end
