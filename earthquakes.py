@@ -41,7 +41,7 @@ earthquake_info = json.load(infile)
 print(len(earthquake_info["features"]))
 # part 1 end
 
-# (not needed) Location = {"place"}
+# (not needed) Location = {"place"} 
 # (not needed) Magnitude = {"mag"}
 # (not needed) Longitude = {"coordinates"[0]}
 # (not needed) Latitude = {"coordinates"[1]}
